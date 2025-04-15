@@ -11,6 +11,7 @@ import { Login, SignUp } from '../data-type';
 export class SellerAuthComponent implements OnInit {
   isLoad: boolean = false;
   isSignedUp: boolean = false;
+  isAuthError: boolean = false;
   constructor(private _api: SellerService, private _router: Router) {}
 
   ngOnInit(): void {
@@ -22,7 +23,14 @@ export class SellerAuthComponent implements OnInit {
   }
 
   sendDataLogin(data: Login) {
-    console.log(data, 'data');
+    // console.log(data, 'data');
+    this._api.userLogin(data);
+    console.log('Okkk', this._api.isError);
+    this._api.isError.subscribe((err) => {
+      if (err) {
+        this.isAuthError = true;
+      }
+    });
   }
 
   changeToggle() {

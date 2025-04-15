@@ -10,3 +10,6 @@
 -- Behaviour Subject for auth functionality
 -- Local Storage
 -- Sign In Page
+-- Sign In Authenticate
+-- Logout Functionality
+-- Add Product Component

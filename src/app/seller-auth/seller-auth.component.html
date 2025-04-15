@@ -96,6 +96,10 @@
       />
     </div>
 
+    <div *ngIf="isAuthError">
+      <h6 class="text-danger">Email or Passowrd is not correct</h6>
+    </div>
+
     <button type="submit" class="btn btn-primary w-100">Submit</button>
 
     <a class="signUpLink" (click)="changeToggle()"

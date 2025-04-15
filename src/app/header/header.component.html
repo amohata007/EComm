@@ -3,28 +3,48 @@
     class="container-fluid d-flex justify-content-between align-items-center w-100"
   >
     <!-- Left: Logo -->
-    <a class="navbar-brand" href="#">E-Comm</a>
+    <a class="navbar-brand" routerLink="/">E-Comm</a>
 
     <!-- Center: Search -->
-    <form class="d-flex mx-auto" style="width: 40%">
+    <form
+      class="d-flex mx-auto"
+      *ngIf="menuType === 'default'"
+      style="width: 40%"
+    >
       <input class="form-control me-2" type="search" placeholder="Search" />
       <button class="btn btn-dark" type="submit">Search</button>
     </form>
 
     <!-- Right: Menu items -->
-    <ul class="navbar-nav d-flex flex-row gap-3">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/seller-auth">Seller</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Cart(0)</a>
-      </li>
-    </ul>
+    <div [ngSwitch]="menuType">
+      <ul class="navbar-nav d-flex flex-row gap-3" *ngSwitchCase="'default'">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/seller-auth">Seller</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cart(0)</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav d-flex flex-row gap-3" *ngSwitchCase="'seller'">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/seller-add-product">Add Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/seller-home">Product List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link logout" (click)="logout()">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">{{ sellerName | titlecase }}</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
