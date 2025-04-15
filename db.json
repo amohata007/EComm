@@ -1,0 +1,40 @@
+{
+  "seller": [
+    {
+      "id": "810a",
+      "name": "Abhishek Mohata",
+      "email": "a@seller.com",
+      "password": "qwerty123"
+    },
+    {
+      "id": "c864",
+      "name": "Abhi Mohata",
+      "email": "abhi@seller.com",
+      "password": "qrty123"
+    },
+    {
+      "id": "ca1f",
+      "name": "Akash Singh",
+      "email": "akash@seller.com",
+      "password": "Ok123"
+    },
+    {
+      "id": "f5aa",
+      "name": "Peter",
+      "email": "p@seller.com",
+      "password": "peter123"
+    },
+    {
+      "id": "0bb6",
+      "name": "Test",
+      "email": "Test@seller.com",
+      "password": "Test123"
+    },
+    {
+      "id": "efe2",
+      "name": "t",
+      "email": "t@masd.c",
+      "password": "trewq"
+    }
+  ]
+}

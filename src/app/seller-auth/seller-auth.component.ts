@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SellerService } from '../servies/seller.service';
+import { Router } from '@angular/router';
+import { Login, SignUp } from '../data-type';
 
 @Component({
   selector: 'app-seller-auth',
@@ -7,11 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerAuthComponent implements OnInit {
   isLoad: boolean = false;
-  constructor() {}
+  isSignedUp: boolean = false;
+  constructor(private _api: SellerService, private _router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._api.reloadSeller();
+  }
 
-  sendData(data: any) {
-    console.log(data);
+  sendData(data: SignUp) {
+    this._api.userSignUp(data);
+  }
+
+  sendDataLogin(data: Login) {
+    console.log(data, 'data');
+  }
+
+  changeToggle() {
+    if (this.isSignedUp) {
+      this.isSignedUp = false;
+    } else {
+      this.isSignedUp = true;
+    }
   }
 }
