@@ -1,1 +1,35 @@
-<p>seller-home works!</p>
+<div class="container mt-4">
+  <h2 class="mb-4">Product List</h2>
+
+  <div
+    class="row"
+    *ngIf="product_list && product_list.length > 0; else noProducts"
+  >
+    <div class="col-md-4 mb-4" *ngFor="let product of product_list">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ product.imageUrl }}"
+          class="card-img-top"
+          alt="{{ product.name }}"
+          style="height: 200px; object-fit: cover"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ product.category }}</h6>
+          <p class="card-text"><strong>Code:</strong> {{ product.code }}</p>
+          <p class="card-text"><strong>Price:</strong> ₹{{ product.price }}</p>
+          <p class="card-text text-truncate" title="{{ product.description }}">
+            {{ product.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No products fallback -->
+  <ng-template #noProducts>
+    <div class="alert alert-info text-center" role="alert">
+      No products available at the moment.
+    </div>
+  </ng-template>
+</div>

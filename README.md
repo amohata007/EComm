@@ -13,3 +13,5 @@
 -- Sign In Authenticate
 -- Logout Functionality
 -- Add Product Component
+-- Design Product Page
+-- Implemented Products Api

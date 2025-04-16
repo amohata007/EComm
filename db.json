@@ -36,5 +36,34 @@
       "email": "t@masd.c",
       "password": "trewq"
     }
+  ],
+  "products": [
+    {
+      "id": "6d8e",
+      "name": "Samsung S24 Ultra",
+      "price": 144999,
+      "code": "Black",
+      "category": "Mobile",
+      "description": "Best for Mobile fearures",
+      "imageUrl": "https://m.media-amazon.com/images/I/71CXhVhpM0L.jpg"
+    },
+    {
+      "id": "6f41",
+      "name": "Iphone 13",
+      "price": 99999,
+      "code": "White",
+      "category": "Mobile",
+      "description": "An Apple Product",
+      "imageUrl": "https://iplanet.one/cdn/shop/files/iPhone_13_Starlight_PDP_Image_Position-1A__GBEN.jpg?v=1691169697"
+    },
+    {
+      "id": "5fba",
+      "name": "Iphone 15 pro",
+      "price": 149999,
+      "code": "Blue",
+      "category": "Mobile",
+      "description": "An Apple product",
+      "imageUrl": "https://m.media-amazon.com/images/I/81CgtwSII3L._SL1500_.jpg"
+    }
   ]
 }
