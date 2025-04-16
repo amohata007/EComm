@@ -39,6 +39,33 @@
   ],
   "products": [
     {
+      "id": "2cc5",
+      "name": "HP Laptop",
+      "price": 79999,
+      "code": "Silver",
+      "category": "Laptop",
+      "description": "Ram - 16 Gb",
+      "imageUrl": "assets/images/Laptop.jpg"
+    },
+    {
+      "id": "dd70",
+      "name": "Sony Headphone",
+      "price": 4999,
+      "code": "Black",
+      "category": "HeadSet",
+      "description": "Powerful Bass",
+      "imageUrl": "assets/images/Headphone.jpg"
+    },
+    {
+      "id": "aa96",
+      "name": "Jbl Sundbar",
+      "price": 9999,
+      "code": "Black",
+      "category": "Speaker",
+      "description": "Sound system with controls",
+      "imageUrl": "assets/images/Speaker.jpg"
+    },
+    {
       "id": "6d8e",
       "name": "Samsung S24 Ultra",
       "price": 144999,
@@ -55,15 +82,6 @@
       "description": "An Apple Product",
       "imageUrl": "https://iplanet.one/cdn/shop/files/iPhone_13_Starlight_PDP_Image_Position-1A__GBEN.jpg?v=1691169697",
       "id": "6f41"
-    },
-    {
-      "name": "Iphone 15 pro",
-      "price": 139999,
-      "code": "Blue",
-      "category": "Mobile",
-      "description": "An Apple product",
-      "imageUrl": "https://m.media-amazon.com/images/I/81CgtwSII3L._SL1500_.jpg",
-      "id": "5fba"
     },
     {
       "name": "Iphone 15 pro",

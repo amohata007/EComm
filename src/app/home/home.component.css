@@ -1,0 +1,24 @@
+.custom-carousel .carousel-item img {
+  height: 640px;
+  object-fit: cover;
+}
+
+.carousel-img-wrapper {
+  padding: 0 200px; /* adjust space as needed */
+}
+
+.carousel-img-wrapper img {
+  width: 100%;
+  height: 640px;
+  object-fit: cover;
+  border-radius: 12px; /* optional: smooth edges */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark */
+  border-radius: 50%;
+  background-size: 100% 100%;
+  width: 40px;
+  height: 40px;
+}

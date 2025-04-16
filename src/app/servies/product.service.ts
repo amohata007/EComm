@@ -30,4 +30,10 @@ export class ProductService {
       data
     );
   }
+
+  popularProduct() {
+    return this._http.get<Product_List[]>(
+      'http://localhost:3000/products?_limit=3'
+    );
+  }
 }
