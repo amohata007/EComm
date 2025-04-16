@@ -19,7 +19,7 @@ export class SellerService {
         this.isSellerLoggedIn.next(true);
         localStorage.setItem('seller', JSON.stringify(res.body));
         this._router.navigate(['/seller-home']);
-        console.log('res', res);
+        // console.log('res', res);
       });
   }
 
@@ -37,7 +37,7 @@ export class SellerService {
         { observe: 'response' }
       )
       .subscribe((res: any) => {
-        console.log(res, 'login');
+        // console.log(res, 'login');
         if (res && res.body && res.body.length) {
           localStorage.setItem('seller', JSON.stringify(res.body));
           this._router.navigate(['/seller-home']);

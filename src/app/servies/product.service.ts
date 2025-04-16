@@ -15,4 +15,19 @@ export class ProductService {
   getProduct() {
     return this._http.get<Product_List[]>('http://localhost:3000/products');
   }
+
+  deleteProduct(id: string) {
+    return this._http.delete(`http://localhost:3000/products/${id}`);
+  }
+
+  getProductList(id: string) {
+    return this._http.get<Product_List>(`http://localhost:3000/products/${id}`);
+  }
+
+  updateProduct(data: Product_List) {
+    return this._http.put<Product_List>(
+      `http://localhost:3000/products/${data.id}`,
+      data
+    );
+  }
 }

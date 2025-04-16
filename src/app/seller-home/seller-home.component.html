@@ -1,14 +1,14 @@
 <div class="container mt-4">
   <h2 class="mb-4">Product List</h2>
-
+  <h3 class="text-success">{{ deleteMessage }}</h3>
   <div
     class="row"
     *ngIf="product_list && product_list.length > 0; else noProducts"
   >
     <div class="col-md-4 mb-4" *ngFor="let product of product_list">
-      <div class="card h-100 shadow-sm">
+      <div class="card h-100 shadow-sm position-relative">
         <img
-          src="{{ product.imageUrl }}"
+          [src]="product.imageUrl"
           class="card-img-top"
           alt="{{ product.name }}"
           style="height: 200px; object-fit: cover"
@@ -22,6 +22,25 @@
             {{ product.description }}
           </p>
         </div>
+
+        <!-- Delete Icon (top right) -->
+        <button
+          class="btn btn-sm btn-danger position-absolute"
+          style="top: 5px; right: 5px"
+          (click)="deleteProduct(product.id)"
+          title="Delete"
+        >
+          <i class="fa fa-trash"></i>
+        </button>
+
+        <button
+          class="btn btn-sm btn-success position-absolute"
+          style="top: 40px; right: 2px"
+          title="Edit"
+          [routerLink]="['/seller-update-product', product.id]"
+        >
+          <i class="fa fa-edit"></i>
+        </button>
       </div>
     </div>
   </div>

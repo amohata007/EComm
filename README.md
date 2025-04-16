@@ -15,3 +15,5 @@
 -- Add Product Component
 -- Design Product Page
 -- Implemented Products Api
+-- Delete Feature
+-- Update Feature
