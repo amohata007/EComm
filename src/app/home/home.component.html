@@ -47,3 +47,27 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<div class="container my-5">
+  <h2 class="text-center mb-4">Trendy Products</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let trend of trendy_products">
+      <div class="card h-100">
+        <img
+          src="{{ trend.imageUrl }}"
+          class="card-img-top"
+          alt="Stylish Shirt"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ trend.name }}</h5>
+          <p class="card-text">Price: ₹ {{ trend.price }}</p>
+          <p class="card-text">Color: {{ trend.code }}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <button class="btn btn-outline-primary btn-sm">View Details</button>
+          <button class="btn btn-primary btn-sm">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
