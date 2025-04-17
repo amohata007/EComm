@@ -1,6 +1,8 @@
 import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductService } from '../servies/product.service';
+import { Product_List } from '../data-type';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +12,8 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   menuType: string = 'default';
   public sellerName: string = 'Seller Name';
-  constructor(private _router: Router) {}
+  searchResult: undefined | Product_List[];
+  constructor(private _router: Router, private _service: ProductService) {}
 
   ngOnInit(): void {
     this._router.events.subscribe((val: any) => {
@@ -31,5 +34,21 @@ export class HeaderComponent implements OnInit {
   logout() {
     localStorage.removeItem('seller');
     this._router.navigate(['/']);
+  }
+
+  searchProd(query: KeyboardEvent) {
+    if (query) {
+      const element = query.target as HTMLInputElement;
+      console.log(element.value, 'el');
+      this._service.searchProducts(element.value).subscribe((res) => {
+        console.log(res, 'res');
+        this.searchResult = res;
+        // console.log(this.searchResult, 'ok');
+      });
+    }
+  }
+
+  hideSearch() {
+    this.searchResult = [];
   }
 }

@@ -18,3 +18,4 @@
 -- Delete Feature
 -- Update Feature
 -- Carousal with popular products
+-- Implemented Search Functionality

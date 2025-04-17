@@ -42,4 +42,10 @@ export class ProductService {
       'http://localhost:3000/products?_limit=5'
     );
   }
+
+  searchProducts(query: string) {
+    return this._http.get<Product_List[]>(
+      `http://localhost:3000/products?q=${query}`
+    );
+  }
 }
