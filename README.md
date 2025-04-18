@@ -19,3 +19,4 @@
 -- Update Feature
 -- Carousal with popular products
 -- Implemented Search Functionality
+-- Product Details Page

@@ -48,7 +48,15 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  redirectToDetails(id: string) {
+    this._router.navigate(['/details/' + id]);
+  }
+
   hideSearch() {
     this.searchResult = [];
+  }
+
+  submitSearch(val: string) {
+    this._router.navigate([`search/${val}`]);
   }
 }

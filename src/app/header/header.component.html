@@ -15,12 +15,19 @@
       <div class="d-flex">
         <input
           class="form-control me-2"
+          #searchInput
           (keyup)="searchProd($event)"
           (blur)="hideSearch()"
           type="search"
           placeholder="Search"
         />
-        <button class="btn btn-dark" type="button">Search</button>
+        <button
+          class="btn btn-dark"
+          (click)="submitSearch(searchInput.value)"
+          type="button"
+        >
+          Search
+        </button>
       </div>
 
       <!-- Suggestion Dropdown (MOVED OUTSIDE .d-flex) -->
@@ -33,7 +40,10 @@
           class="list-group-item list-group-item-action"
           *ngFor="let item of searchResult"
         >
-          {{ item.name }}
+          <!-- mousedown event used because can't directly use path here as we are using blur event in parent -->
+          <a (mousedown)="redirectToDetails(item.id)">
+            {{ item.name }}
+          </a>
         </li>
       </ul>
     </div>

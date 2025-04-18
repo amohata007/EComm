@@ -19,7 +19,9 @@
       [class.active]="i === 0"
     >
       <div class="carousel-img-wrapper">
-        <img [src]="product.imageUrl" class="d-block" [alt]="product.name" />
+        <a routerLink="/details/{{ product.id }}">
+          <img [src]="product.imageUrl" class="d-block" [alt]="product.name" />
+        </a>
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>{{ product.name }}</h5>
@@ -53,18 +55,22 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" *ngFor="let trend of trendy_products">
       <div class="card h-100">
-        <img
-          src="{{ trend.imageUrl }}"
-          class="card-img-top"
-          alt="Stylish Shirt"
-        />
+        <a routerLink="/details/{{ trend.id }}">
+          <img
+            src="{{ trend.imageUrl }}"
+            class="card-img-top"
+            alt="Stylish Shirt"
+          />
+        </a>
         <div class="card-body">
           <h5 class="card-title">{{ trend.name }}</h5>
           <p class="card-text">Price: ₹ {{ trend.price }}</p>
           <p class="card-text">Color: {{ trend.code }}</p>
         </div>
         <div class="card-footer d-flex justify-content-between">
-          <button class="btn btn-outline-primary btn-sm">View Details</button>
+          <button class="btn btn-outline-primary btn-sm">
+            <a routerLink="/details/{{ trend.id }}">View Details</a>
+          </button>
           <button class="btn btn-primary btn-sm">Add to Cart</button>
         </div>
       </div>
