@@ -92,5 +92,19 @@
       "imageUrl": "https://m.media-amazon.com/images/I/81CgtwSII3L._SL1500_.jpg",
       "id": "5fb3"
     }
+  ],
+  "users": [
+    {
+      "name": "Abhishek Mohata",
+      "email": "a@gmail.com",
+      "password": "mnbvcxz",
+      "id": 1
+    },
+    {
+      "name": "Abhishek",
+      "email": "abhi@gmail.com",
+      "password": "aaaa",
+      "id": 2
+    }
   ]
 }

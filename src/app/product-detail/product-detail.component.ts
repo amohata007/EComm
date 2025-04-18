@@ -26,10 +26,14 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addToCart() {
-    console.log('Add to cart:', {
-      ...this.productData,
-      quantity: this.quantity,
-    });
+    if (this.productData) {
+      this.productData.quantity = this.quantity;
+
+      if (!localStorage.getItem('user')) {
+        this._service.addToCartItem(this.productData);
+        console.log(this.productData, 'Data');
+      }
+    }
   }
 
   ngOnInit(): void {

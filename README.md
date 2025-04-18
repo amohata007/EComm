@@ -20,3 +20,4 @@
 -- Carousal with popular products
 -- Implemented Search Functionality
 -- Product Details Page
+-- User Sign Up / Sign In

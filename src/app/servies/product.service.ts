@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Product_List } from '../data-type';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
+  cartData = new EventEmitter<Product_List[] | []>();
   constructor(private _http: HttpClient) {}
 
   addProduct(data: Product_List) {
@@ -47,5 +48,18 @@ export class ProductService {
     return this._http.get<Product_List[]>(
       `http://localhost:3000/products?q=${query}`
     );
+  }
+
+  addToCartItem(data: Product_List) {
+    let cartData = [];
+    let localCartData = localStorage.getItem('localCart');
+    if (!localCartData) {
+      localStorage.setItem('localCart', JSON.stringify([data]));
+    } else {
+      cartData = JSON.parse(localCartData);
+      cartData.push(data);
+      localStorage.setItem('localCart', JSON.stringify(cartData));
+    }
+    this.cartData.emit(cartData);
   }
 }

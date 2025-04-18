@@ -17,6 +17,7 @@ export interface Product_List {
   description: string;
   imageUrl: string;
   id: string;
+  quantity?: number;
 }
 
 // {

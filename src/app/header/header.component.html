@@ -58,10 +58,10 @@
           <a class="nav-link" routerLink="/seller-auth">Seller</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+          <a class="nav-link" routerLink="/user-auth">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cart(0)</a>
+          <a class="nav-link" href="#">Cart({{ cartLength }})</a>
         </li>
       </ul>
       <ul class="navbar-nav d-flex flex-row gap-3" *ngSwitchCase="'seller'">
@@ -76,6 +76,23 @@
         </li>
         <li class="nav-item">
           <a class="nav-link">{{ sellerName | titlecase }}</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav d-flex flex-row gap-3" *ngSwitchCase="'user'">
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/seller-add-product">Add Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/seller-home">Product List</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link logout" (click)="logoutUser()">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">{{ userName | titlecase }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Cart ({{ cartLength }})</a>
         </li>
       </ul>
     </div>

@@ -1,0 +1,148 @@
+<!-- User Sign Up -->
+<div
+  *ngIf="!isSignedUp"
+  class="d-flex justify-content-center align-items-start vh-100 pt-5"
+>
+  <form
+    #userSignUp="ngForm"
+    (ngSubmit)="sendData(userSignUp.value)"
+    class="col-4 bg-white p-4 rounded shadow-sm border"
+  >
+    <h3 class="text-center text-success mb-4">Create Your Account</h3>
+
+    <div class="form-group mb-3">
+      <label for="userNameInput">Full Name</label>
+      <input
+        type="text"
+        ngModel
+        name="name"
+        class="form-control"
+        id="userNameInput"
+        placeholder="Your full name"
+        required
+        #name="ngModel"
+      />
+      <span *ngIf="name.invalid && name.touched" class="text-danger">
+        Full name is required
+      </span>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="userEmailInput">Email Address</label>
+      <input
+        type="email"
+        ngModel
+        name="email"
+        class="form-control"
+        id="userEmailInput"
+        placeholder="name@example.com"
+        required
+        email
+        #email="ngModel"
+      />
+      <span *ngIf="email.invalid && email.touched" class="text-danger">
+        Please enter a valid email
+      </span>
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="userPasswordInput">Create Password</label>
+      <input
+        type="password"
+        ngModel
+        name="password"
+        class="form-control"
+        id="userPasswordInput"
+        placeholder="Choose a strong password"
+        required
+        minlength="4"
+        #password="ngModel"
+      />
+      <span
+        *ngIf="password.errors?.['minlength'] && (password.touched || password.dirty)"
+        class="text-danger"
+      >
+        Password must be at least 4 characters long
+      </span>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-success w-100"
+      [disabled]="userSignUp.invalid"
+    >
+      Sign Up
+    </button>
+    <a class="signUpLink d-block text-center mt-3" (click)="changeToggle()">
+      Already have an account? Login here
+    </a>
+  </form>
+</div>
+
+<!-- User Login -->
+<div
+  *ngIf="isSignedUp"
+  class="d-flex justify-content-center align-items-start vh-100 pt-5"
+>
+  <form
+    #userLogin="ngForm"
+    (ngSubmit)="sendDataLogin(userLogin.value)"
+    class="col-4 bg-white p-4 rounded shadow-sm border"
+  >
+    <h3 class="text-center text-success mb-4">Welcome Back!</h3>
+
+    <div class="form-group mb-3">
+      <label for="loginEmailInput">Email Address</label>
+      <input
+        type="email"
+        ngModel
+        name="email"
+        class="form-control"
+        id="loginEmailInput"
+        placeholder="Enter your email"
+        required
+        email
+        #email="ngModel"
+      />
+      <span *ngIf="email.invalid && email.touched" class="text-danger">
+        Please enter a valid email
+      </span>
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="loginPasswordInput">Password</label>
+      <input
+        type="password"
+        ngModel
+        name="password"
+        class="form-control"
+        id="loginPasswordInput"
+        placeholder="Enter your password"
+        required
+        minlength="4"
+        #password="ngModel"
+      />
+      <span
+        *ngIf="password.errors?.['minlength'] && (password.touched || password.dirty)"
+        class="text-danger"
+      >
+        Password must be at least 4 characters long
+      </span>
+    </div>
+
+    <div *ngIf="isAuthError">
+      <h6 class="text-danger">Incorrect email or password</h6>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-success w-100"
+      [disabled]="userLogin.invalid"
+    >
+      Log In
+    </button>
+    <a class="signUpLink d-block text-center mt-3" (click)="changeToggle()">
+      Don't have an account? Sign up here
+    </a>
+  </form>
+</div>

@@ -12,7 +12,10 @@ import { Product_List } from '../data-type';
 export class HeaderComponent implements OnInit {
   menuType: string = 'default';
   public sellerName: string = 'Seller Name';
+  public userName: string = 'User Name';
   searchResult: undefined | Product_List[];
+  cartLength = 0;
+
   constructor(private _router: Router, private _service: ProductService) {}
 
   ngOnInit(): void {
@@ -24,10 +27,26 @@ export class HeaderComponent implements OnInit {
           let namee = localStorage.getItem('seller');
           let nameData = namee && JSON.parse(namee);
           this.sellerName = nameData[0].name;
+        } else if (localStorage.getItem('user')) {
+          this.menuType = 'user';
+          const userStr = localStorage.getItem('user');
+          const userArr = userStr && JSON.parse(userStr);
+          this.userName =
+            Array.isArray(userArr) && userArr.length > 0
+              ? userArr[0].name
+              : 'User';
         } else {
           this.menuType = 'default';
         }
       }
+    });
+
+    let cartDataLength = localStorage.getItem('localCart');
+    if (cartDataLength) {
+      this.cartLength = JSON.parse(cartDataLength).length;
+    }
+    this._service.cartData.subscribe((item) => {
+      this.cartLength = item.length;
     });
   }
 
@@ -46,6 +65,11 @@ export class HeaderComponent implements OnInit {
         // console.log(this.searchResult, 'ok');
       });
     }
+  }
+
+  logoutUser() {
+    localStorage.removeItem('user');
+    this._router.navigate(['user-auth']);
   }
 
   redirectToDetails(id: string) {
