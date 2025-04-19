@@ -62,4 +62,14 @@ export class ProductService {
     }
     this.cartData.emit(cartData);
   }
+
+  removeToCart(prodId: string) {
+    let localCartData = localStorage.getItem('localCart');
+    if (localCartData) {
+      let items: Product_List[] = JSON.parse(localCartData);
+      items = items.filter((item: Product_List) => prodId !== item.id);
+      localStorage.setItem('localCart', JSON.stringify(items));
+      this.cartData.emit(items);
+    }
+  }
 }

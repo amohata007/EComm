@@ -21,3 +21,5 @@
 -- Implemented Search Functionality
 -- Product Details Page
 -- User Sign Up / Sign In
+-- Add to Cart
+-- Remove from Cart
