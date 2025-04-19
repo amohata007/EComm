@@ -23,3 +23,5 @@
 -- User Sign Up / Sign In
 -- Add to Cart
 -- Remove from Cart
+-- Cart Page
+-- Cart Api's

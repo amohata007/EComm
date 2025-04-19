@@ -14,6 +14,7 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
 import { SearchComponent } from './search/search.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
     SearchComponent,
     ProductDetailComponent,
     UserAuthComponent,
+    CartPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

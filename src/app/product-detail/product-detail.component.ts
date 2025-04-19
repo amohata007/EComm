@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../servies/product.service';
 import { ActivatedRoute } from '@angular/router';
-import { Product_List } from '../data-type';
+import { Cart_Data, Product_List } from '../data-type';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,6 +11,7 @@ import { Product_List } from '../data-type';
 export class ProductDetailComponent implements OnInit {
   productData: undefined | Product_List;
   removeCart = false;
+  cartData: Product_List | undefined;
   constructor(
     private _service: ProductService,
     private _activate: ActivatedRoute
@@ -33,12 +34,39 @@ export class ProductDetailComponent implements OnInit {
       if (!localStorage.getItem('user')) {
         this._service.addToCartItem(this.productData);
         this.removeCart = true;
+      } else {
+        let fetchUserId = localStorage.getItem('user');
+        let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
+        console.log('Userid', userId, fetchUserId);
+        let cartData: Cart_Data = {
+          ...this.productData,
+          userId,
+          productId: this.productData.id,
+        };
+        delete cartData.id;
+        this._service.addToCart(cartData).subscribe((res) => {
+          if (res) {
+            this._service.getCartList(userId);
+            this.removeCart = true;
+          }
+        });
       }
     }
   }
 
   removeToCart(prodId: string) {
-    this._service.removeToCart(prodId);
+    if (!localStorage.getItem('user')) {
+      this._service.removeToCart(prodId);
+    } else {
+      let fetchUserId = localStorage.getItem('user');
+      let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
+      this.cartData &&
+        this._service.removeListToCart(this.cartData.id).subscribe((res) => {
+          if (res) {
+            this._service.getCartList(userId);
+          }
+        });
+    }
     this.removeCart = false;
   }
 
@@ -57,6 +85,21 @@ export class ProductDetailComponent implements OnInit {
           } else {
             this.removeCart = false;
           }
+        }
+
+        let fetchUserId = localStorage.getItem('user');
+        if (fetchUserId) {
+          let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
+          this._service.getCartList(userId);
+          this._service.cartData.subscribe((res) => {
+            let item = res.filter(
+              (item: Product_List) => productId === item.productId
+            );
+            if (item.length) {
+              this.cartData = item[0];
+              this.removeCart = true;
+            }
+          });
         }
       });
   }

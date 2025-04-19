@@ -18,14 +18,18 @@ export interface Product_List {
   imageUrl: string;
   id: string;
   quantity?: number;
+  productId?: string;
 }
 
-// {
-//   "id": "5fba",
-//   "name": "Iphone 15 pro",
-//   "price": 149999,
-//   "code": "Blue",
-//   "category": "Mobile",
-//   "description": "An Apple product",
-//   "imageUrl": "https://m.media-amazon.com/images/I/81CgtwSII3L._SL1500_.jpg"
-// }
+export interface Cart_Data {
+  name: string;
+  price: number;
+  code: string;
+  category: string;
+  description: string;
+  imageUrl: string;
+  id: any;
+  quantity?: number;
+  userId: number;
+  productId: string;
+}

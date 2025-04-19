@@ -35,6 +35,7 @@ export class HeaderComponent implements OnInit {
             Array.isArray(userArr) && userArr.length > 0
               ? userArr[0].name
               : 'User';
+          this._service.getCartList(userArr[0].id);
         } else {
           this.menuType = 'default';
         }
@@ -53,6 +54,7 @@ export class HeaderComponent implements OnInit {
   logout() {
     localStorage.removeItem('seller');
     this._router.navigate(['/']);
+    this._service.cartData.emit([]);
   }
 
   searchProd(query: KeyboardEvent) {

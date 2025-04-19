@@ -106,5 +106,180 @@
       "password": "aaaa",
       "id": 2
     }
+  ],
+  "cart": [
+    {
+      "name": "HP Laptop",
+      "price": 79999,
+      "code": "Silver",
+      "category": "Laptop",
+      "description": "Ram - 16 Gb",
+      "imageUrl": "assets/images/Laptop.jpg",
+      "quantity": 1,
+      "userID": 2,
+      "productId": "2cc5",
+      "id": 1
+    },
+    {
+      "name": "Sony Headphone",
+      "price": 4999,
+      "code": "Black",
+      "category": "HeadSet",
+      "description": "Powerful Bass",
+      "imageUrl": "assets/images/Headphone.jpg",
+      "quantity": 1,
+      "productId": "dd70",
+      "id": 2
+    },
+    {
+      "name": "HP Laptop",
+      "price": 79999,
+      "code": "Silver",
+      "category": "Laptop",
+      "description": "Ram - 16 Gb",
+      "imageUrl": "assets/images/Laptop.jpg",
+      "quantity": 1,
+      "productId": "2cc5",
+      "id": 3
+    },
+    {
+      "name": "Iphone 13",
+      "price": "99999",
+      "code": "White",
+      "category": "Mobile",
+      "description": "An Apple Product",
+      "imageUrl": "https://iplanet.one/cdn/shop/files/iPhone_13_Starlight_PDP_Image_Position-1A__GBEN.jpg?v=1691169697",
+      "quantity": 1,
+      "productId": "6f41",
+      "id": 4
+    },
+    {
+      "name": "Iphone 13",
+      "price": "99999",
+      "code": "White",
+      "category": "Mobile",
+      "description": "An Apple Product",
+      "imageUrl": "https://iplanet.one/cdn/shop/files/iPhone_13_Starlight_PDP_Image_Position-1A__GBEN.jpg?v=1691169697",
+      "quantity": 1,
+      "productId": "6f41",
+      "id": 5
+    },
+    {
+      "name": "Sony Headphone",
+      "price": 4999,
+      "code": "Black",
+      "category": "HeadSet",
+      "description": "Powerful Bass",
+      "imageUrl": "assets/images/Headphone.jpg",
+      "quantity": 1,
+      "productId": "dd70",
+      "id": 6
+    },
+    {
+      "name": "Samsung S24 Ultra",
+      "price": 144999,
+      "code": "Black",
+      "category": "Mobile",
+      "description": "Best for Mobile fearures",
+      "imageUrl": "https://m.media-amazon.com/images/I/71CXhVhpM0L.jpg",
+      "quantity": 1,
+      "productId": "6d8e",
+      "id": 7
+    },
+    {
+      "name": "HP Laptop",
+      "price": 79999,
+      "code": "Silver",
+      "category": "Laptop",
+      "description": "Ram - 16 Gb",
+      "imageUrl": "assets/images/Laptop.jpg",
+      "quantity": 1,
+      "productId": "2cc5",
+      "id": 8
+    },
+    {
+      "name": "HP Laptop",
+      "price": 79999,
+      "code": "Silver",
+      "category": "Laptop",
+      "description": "Ram - 16 Gb",
+      "imageUrl": "assets/images/Laptop.jpg",
+      "quantity": 1,
+      "productId": "2cc5",
+      "userId": 1,
+      "id": 10
+    },
+    {
+      "name": "Sony Headphone",
+      "price": 4999,
+      "code": "Black",
+      "category": "HeadSet",
+      "description": "Powerful Bass",
+      "imageUrl": "assets/images/Headphone.jpg",
+      "quantity": 1,
+      "productId": "dd70",
+      "userId": 1,
+      "id": 11
+    },
+    {
+      "name": "HP Laptop",
+      "price": 79999,
+      "code": "Silver",
+      "category": "Laptop",
+      "description": "Ram - 16 Gb",
+      "imageUrl": "assets/images/Laptop.jpg",
+      "quantity": 1,
+      "userId": 1,
+      "productId": "2cc5",
+      "id": 12
+    },
+    {
+      "name": "HP Laptop",
+      "price": 79999,
+      "code": "Silver",
+      "category": "Laptop",
+      "description": "Ram - 16 Gb",
+      "imageUrl": "assets/images/Laptop.jpg",
+      "quantity": 1,
+      "userId": 1,
+      "productId": "2cc5",
+      "id": 13
+    },
+    {
+      "name": "Samsung S24 Ultra",
+      "price": 144999,
+      "code": "Black",
+      "category": "Mobile",
+      "description": "Best for Mobile fearures",
+      "imageUrl": "https://m.media-amazon.com/images/I/71CXhVhpM0L.jpg",
+      "quantity": 1,
+      "userId": 2,
+      "productId": "6d8e",
+      "id": 16
+    },
+    {
+      "name": "HP Laptop",
+      "price": 79999,
+      "code": "Silver",
+      "category": "Laptop",
+      "description": "Ram - 16 Gb",
+      "imageUrl": "assets/images/Laptop.jpg",
+      "quantity": 1,
+      "userId": 2,
+      "productId": "2cc5",
+      "id": 17
+    },
+    {
+      "name": "Sony Headphone",
+      "price": 4999,
+      "code": "Black",
+      "category": "HeadSet",
+      "description": "Powerful Bass",
+      "imageUrl": "assets/images/Headphone.jpg",
+      "quantity": 2,
+      "userId": 2,
+      "productId": "dd70",
+      "id": 18
+    }
   ]
 }
