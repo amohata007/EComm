@@ -1,0 +1,81 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Checkout</h2>
+  <h4 class="text-success text-center">{{ msg }}</h4>
+
+  <form #orderData="ngForm" (ngSubmit)="orderNow(orderData.value)">
+    <div class="row justify-content-center">
+      <!-- Shipping Form -->
+      <div class="col-md-5">
+        <div class="card shadow-sm p-4">
+          <h5 class="mb-3">Add Shipping Address</h5>
+
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              ngModel
+              placeholder="Enter your email"
+              required
+              email
+              #email="ngModel"
+            />
+            <p class="text-danger" *ngIf="email.touched && email.invalid">
+              Please enter a valid email
+            </p>
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              name="address"
+              ngModel
+              placeholder="Enter your address"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="number"
+              class="form-control"
+              name="contact"
+              ngModel
+              placeholder="Enter contact details"
+              pattern="^[0-9]{10}$"
+              required
+              #contact="ngModel"
+            />
+            <p
+              class="text-danger"
+              *ngIf="contact.errors?.['pattern'] && (contact.touched || contact.dirty)"
+            >
+              Mobile number should be of 10 digits
+            </p>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary w-100"
+            [disabled]="orderData.invalid"
+          >
+            Order Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="col-md-5 mt-4 mt-md-0">
+        <div class="card shadow-sm p-4">
+          <h5 class="mb-3">Order Summary</h5>
+          <p><strong>Total Amount:</strong> ₹{{ getGrandTotal() }}</p>
+          <p>
+            <strong>Payment Method:</strong>
+            <span class="text-success">Pay on Delivery</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

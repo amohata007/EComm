@@ -33,3 +33,12 @@ export interface Cart_Data {
   userId: number;
   productId: string;
 }
+
+export interface Order_Data {
+  email: string;
+  address: string;
+  mobile: number;
+  price: number;
+  userId: number;
+  id?: number;
+}

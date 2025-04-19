@@ -244,42 +244,31 @@
       "userId": 1,
       "productId": "2cc5",
       "id": 13
+    }
+  ],
+  "orders": [
+    {
+      "email": "a@jhas.akj",
+      "address": "Surat",
+      "contact": 7777777777,
+      "price": 230046,
+      "id": 1
     },
     {
-      "name": "Samsung S24 Ultra",
-      "price": 144999,
-      "code": "Black",
-      "category": "Mobile",
-      "description": "Best for Mobile fearures",
-      "imageUrl": "https://m.media-amazon.com/images/I/71CXhVhpM0L.jpg",
-      "quantity": 1,
+      "email": "a@gmas.cjs",
+      "address": "Pune",
+      "contact": 7777766666,
+      "price": 10048,
       "userId": 2,
-      "productId": "6d8e",
-      "id": 16
+      "id": 3
     },
     {
-      "name": "HP Laptop",
-      "price": 79999,
-      "code": "Silver",
-      "category": "Laptop",
-      "description": "Ram - 16 Gb",
-      "imageUrl": "assets/images/Laptop.jpg",
-      "quantity": 1,
+      "email": "abhi@check.com",
+      "address": "Delhi",
+      "contact": 9876543211,
+      "price": 75049,
       "userId": 2,
-      "productId": "2cc5",
-      "id": 17
-    },
-    {
-      "name": "Sony Headphone",
-      "price": 4999,
-      "code": "Black",
-      "category": "HeadSet",
-      "description": "Powerful Bass",
-      "imageUrl": "assets/images/Headphone.jpg",
-      "quantity": 2,
-      "userId": 2,
-      "productId": "dd70",
-      "id": 18
+      "id": 4
     }
   ]
 }

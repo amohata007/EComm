@@ -1,0 +1,50 @@
+<div class="container py-5">
+  <h2 class="fw-bold mb-4">🧾 My Orders</h2>
+
+  <div
+    class="card shadow-lg rounded-4 border-0 p-4"
+    *ngFor="let order of orderData"
+  >
+    <div class="row align-items-center text-center gy-4">
+      <!-- Product Icon -->
+      <div class="col-md-2">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+          alt="Order Icon"
+          class="img-fluid rounded shadow-sm"
+          style="max-height: 70px"
+        />
+      </div>
+
+      <!-- Order ID -->
+      <div class="col-md-2">
+        <div class="text-muted small">Order ID</div>
+        <div class="fs-5 fw-medium">#{{ order.id }}</div>
+      </div>
+
+      <!-- Price -->
+      <div class="col-md-2">
+        <div class="text-muted small">Price</div>
+        <div class="fs-5 fw-semibold text-success">₹{{ order.price }}</div>
+      </div>
+
+      <!-- Status -->
+      <div class="col-md-2">
+        <div class="text-muted small">Status</div>
+        <span class="badge bg-info text-dark fs-6 py-2 px-3 rounded-pill"
+          >In Process</span
+        >
+      </div>
+
+      <!-- Action -->
+      <div class="col-md-4">
+        <button
+          class="btn btn-outline-danger btn-lg px-4 rounded-pill"
+          (click)="cancelOrder(order.id)"
+        >
+          <i class="bi bi-x-circle me-2"></i> Cancel Order
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

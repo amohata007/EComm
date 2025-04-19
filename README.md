@@ -25,3 +25,8 @@
 -- Remove from Cart
 -- Cart Page
 -- Cart Api's
+-- Checkout Page
+-- Orders Page
+-- Delete Functionality
+-- Checkout Functionality
+-- Orders Api
