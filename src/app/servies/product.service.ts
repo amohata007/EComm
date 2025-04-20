@@ -93,7 +93,8 @@ export class ProductService {
 
   currentCart() {
     let fetchUserId = localStorage.getItem('user');
-    let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
+    const user = fetchUserId && JSON.parse(fetchUserId);
+    const userId = user?.id;
     return this._http.get<Cart_Data[]>(
       'http://localhost:3000/cart/?userId=' + userId
     );
@@ -105,7 +106,8 @@ export class ProductService {
 
   orderList() {
     let fetchUserId = localStorage.getItem('user');
-    let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
+    const user = fetchUserId && JSON.parse(fetchUserId);
+    const userId = user?.id;
     return this._http.get<Order_Data[]>(
       'http://localhost:3000/orders/?userId=' + userId
     );

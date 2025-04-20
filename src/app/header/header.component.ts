@@ -30,12 +30,11 @@ export class HeaderComponent implements OnInit {
         } else if (localStorage.getItem('user')) {
           this.menuType = 'user';
           const userStr = localStorage.getItem('user');
-          const userArr = userStr && JSON.parse(userStr);
-          this.userName =
-            Array.isArray(userArr) && userArr.length > 0
-              ? userArr[0].name
-              : 'User';
-          this._service.getCartList(userArr[0].id);
+          const user = userStr && JSON.parse(userStr);
+          if (user) {
+            this.userName = user.name;
+            this._service.getCartList(user.id);
+          }
         } else {
           this.menuType = 'default';
         }

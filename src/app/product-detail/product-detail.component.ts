@@ -27,6 +27,33 @@ export class ProductDetailComponent implements OnInit {
     if (this.quantity > 1) this.quantity--;
   }
 
+  // addToCart() {
+  //   if (this.productData) {
+  //     this.productData.quantity = this.quantity;
+
+  //     if (!localStorage.getItem('user')) {
+  //       this._service.addToCartItem(this.productData);
+  //       this.removeCart = true;
+  //     } else {
+  //       let fetchUserId = localStorage.getItem('user');
+  //       let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
+  //       console.log('Userid', userId, fetchUserId);
+  //       let cartData: Cart_Data = {
+  //         ...this.productData,
+  //         userId,
+  //         productId: this.productData.id,
+  //       };
+  //       delete cartData.id;
+  //       this._service.addToCart(cartData).subscribe((res) => {
+  //         if (res) {
+  //           this._service.getCartList(userId);
+  //           this.removeCart = true;
+  //         }
+  //       });
+  //     }
+  //   }
+  // }
+
   addToCart() {
     if (this.productData) {
       this.productData.quantity = this.quantity;
@@ -35,15 +62,19 @@ export class ProductDetailComponent implements OnInit {
         this._service.addToCartItem(this.productData);
         this.removeCart = true;
       } else {
-        let fetchUserId = localStorage.getItem('user');
-        let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
+        const fetchUserId = localStorage.getItem('user');
+        const user = fetchUserId && JSON.parse(fetchUserId);
+        const userId = user?.id;
+
         console.log('Userid', userId, fetchUserId);
-        let cartData: Cart_Data = {
+
+        const cartData: Cart_Data = {
           ...this.productData,
           userId,
           productId: this.productData.id,
         };
         delete cartData.id;
+
         this._service.addToCart(cartData).subscribe((res) => {
           if (res) {
             this._service.getCartList(userId);
@@ -54,12 +85,30 @@ export class ProductDetailComponent implements OnInit {
     }
   }
 
+  // removeToCart(prodId: string) {
+  //   if (!localStorage.getItem('user')) {
+  //     this._service.removeToCart(prodId);
+  //   } else {
+  //     let fetchUserId = localStorage.getItem('user');
+  //     let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
+  //     this.cartData &&
+  //       this._service.removeListToCart(this.cartData.id).subscribe((res) => {
+  //         if (res) {
+  //           this._service.getCartList(userId);
+  //         }
+  //       });
+  //   }
+  //   this.removeCart = false;
+  // }
+
   removeToCart(prodId: string) {
     if (!localStorage.getItem('user')) {
       this._service.removeToCart(prodId);
     } else {
-      let fetchUserId = localStorage.getItem('user');
-      let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
+      const fetchUserId = localStorage.getItem('user');
+      const user = fetchUserId && JSON.parse(fetchUserId);
+      const userId = user?.id;
+
       this.cartData &&
         this._service.removeListToCart(this.cartData.id).subscribe((res) => {
           if (res) {
@@ -89,7 +138,8 @@ export class ProductDetailComponent implements OnInit {
 
         let fetchUserId = localStorage.getItem('user');
         if (fetchUserId) {
-          let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
+          const user = fetchUserId && JSON.parse(fetchUserId);
+          const userId = user?.id;
           this._service.getCartList(userId);
           this._service.cartData.subscribe((res) => {
             let item = res.filter(

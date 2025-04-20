@@ -105,6 +105,18 @@
       "email": "abhi@gmail.com",
       "password": "aaaa",
       "id": 2
+    },
+    {
+      "name": "Virat",
+      "email": "v@gmail.com",
+      "password": "vvvv",
+      "id": 3
+    },
+    {
+      "name": "Virat Kohli",
+      "email": "virat@gmail.com",
+      "password": "virat",
+      "id": 4
     }
   ],
   "cart": [
@@ -244,6 +256,30 @@
       "userId": 1,
       "productId": "2cc5",
       "id": 13
+    },
+    {
+      "name": "Iphone 13",
+      "price": "99999",
+      "code": "White",
+      "category": "Mobile",
+      "description": "An Apple Product",
+      "imageUrl": "https://iplanet.one/cdn/shop/files/iPhone_13_Starlight_PDP_Image_Position-1A__GBEN.jpg?v=1691169697",
+      "quantity": 1,
+      "userId": 4,
+      "productId": "6f41",
+      "id": 14
+    },
+    {
+      "name": "Sony Headphone",
+      "price": 4999,
+      "code": "Black",
+      "category": "HeadSet",
+      "description": "Powerful Bass",
+      "imageUrl": "assets/images/Headphone.jpg",
+      "quantity": 1,
+      "userId": 4,
+      "productId": "dd70",
+      "id": 15
     }
   ],
   "orders": [

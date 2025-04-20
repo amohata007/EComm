@@ -39,7 +39,8 @@ export class CheckoutComponent implements OnInit {
 
   orderNow(data: Order_Data) {
     let fetchUserId = localStorage.getItem('user');
-    let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
+    const user = fetchUserId && JSON.parse(fetchUserId);
+    const userId = user?.id;
 
     if (this.getGrandTotal()) {
       let orderData = { ...data, price: this.getGrandTotal(), userId: userId };
