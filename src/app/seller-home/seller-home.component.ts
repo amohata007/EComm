@@ -15,7 +15,6 @@ export class SellerHomeComponent implements OnInit {
 
   ngOnInit(): void {
     this._service.getProduct().subscribe((res) => {
-      // console.log(res);
       this.product_list = res;
     });
   }

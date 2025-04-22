@@ -23,7 +23,6 @@ export class SellerAuthComponent implements OnInit {
   }
 
   sendDataLogin(data: Login) {
-    // console.log(data, 'data');
     this._api.userLogin(data);
     console.log('Okkk', this._api.isError);
     this._api.isError.subscribe((err) => {

@@ -27,33 +27,6 @@ export class ProductDetailComponent implements OnInit {
     if (this.quantity > 1) this.quantity--;
   }
 
-  // addToCart() {
-  //   if (this.productData) {
-  //     this.productData.quantity = this.quantity;
-
-  //     if (!localStorage.getItem('user')) {
-  //       this._service.addToCartItem(this.productData);
-  //       this.removeCart = true;
-  //     } else {
-  //       let fetchUserId = localStorage.getItem('user');
-  //       let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
-  //       console.log('Userid', userId, fetchUserId);
-  //       let cartData: Cart_Data = {
-  //         ...this.productData,
-  //         userId,
-  //         productId: this.productData.id,
-  //       };
-  //       delete cartData.id;
-  //       this._service.addToCart(cartData).subscribe((res) => {
-  //         if (res) {
-  //           this._service.getCartList(userId);
-  //           this.removeCart = true;
-  //         }
-  //       });
-  //     }
-  //   }
-  // }
-
   addToCart() {
     if (this.productData) {
       this.productData.quantity = this.quantity;
@@ -84,22 +57,6 @@ export class ProductDetailComponent implements OnInit {
       }
     }
   }
-
-  // removeToCart(prodId: string) {
-  //   if (!localStorage.getItem('user')) {
-  //     this._service.removeToCart(prodId);
-  //   } else {
-  //     let fetchUserId = localStorage.getItem('user');
-  //     let userId = fetchUserId && JSON.parse(fetchUserId)[0].id;
-  //     this.cartData &&
-  //       this._service.removeListToCart(this.cartData.id).subscribe((res) => {
-  //         if (res) {
-  //           this._service.getCartList(userId);
-  //         }
-  //       });
-  //   }
-  //   this.removeCart = false;
-  // }
 
   removeToCart(prodId: string) {
     if (!localStorage.getItem('user')) {

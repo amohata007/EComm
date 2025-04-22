@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this._router.events.subscribe((val: any) => {
-      // console.log(val.url);
       if (val.url) {
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
           this.menuType = 'seller';
@@ -63,7 +62,6 @@ export class HeaderComponent implements OnInit {
       this._service.searchProducts(element.value).subscribe((res) => {
         console.log(res, 'res');
         this.searchResult = res;
-        // console.log(this.searchResult, 'ok');
       });
     }
   }
